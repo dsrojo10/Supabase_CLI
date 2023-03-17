@@ -39,7 +39,50 @@ npm update supabase --save-dev
 brew upgrade supabase
 ```
 
-## Windows
+### Windows
 ```bash
 scoop update supabase
 ```
+
+## Basic commands
+
+### Login
+```bash
+supabase login
+```
+
+### List Organizations
+
+```bash
+supabase orgs list
+```
+
+### Create a new project
+
+```bash
+supabase projects create my-new-project --db-password <string> --org-id <string> --region <string>
+```
+
+## Run Supabase Locally
+
+### Prerequisites#
+Make sure you have these installed on your local machine:
+
+* Docker
+* Git
+* Supabase CLI
+
+```bash
+supabase login
+```
+An access token must be generated in supabase, you can generate an access token from https://app.supabase.com/account/tokens
+
+Make sure Docker is running. The start command uses Docker to start the Supabase services. This command may take a while to run if this is the first time using the CLI.
+
+```bash
+supabase start
+```
+
+Once all of the Supabase services are running, you'll see output containing your local Supabase credentials. You can use the stop command at any time to stop all services.
+
+This way startated supabase local development setup.
