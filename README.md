@@ -65,7 +65,7 @@ supabase projects create my-new-project --db-password <string> --org-id <string>
 
 ## Run Supabase Locally
 
-### Prerequisites#
+### Prerequisites
 Make sure you have these installed on your local machine:
 
 * Docker
@@ -85,4 +85,38 @@ supabase start
 
 Once all of the Supabase services are running, you'll see output containing your local Supabase credentials. You can use the stop command at any time to stop all services.
 
-This way startated supabase local development setup.
+This way started supabase local development setup.
+
+When the containers are finished creating, we will be able to enter the local development environment with URL Studio.
+
+Studio URL: http://localhost:54323
+
+* enter the table editor
+* create a new table
+
+Now we go to the console and execute:
+
+```bash
+supabase gen types typescript --local
+```
+
+We can get the table values directly.
+
+*  At any time we can verify that supabase is running correctly with the command:
+    ```bash
+    supabase status
+    ```
+
+###  Compare database with migrations
+
+```bash
+supabase db diff
+```
+
+### Create migration
+```bash
+supabase db diff --use-migra -f new_table
+```
+
+* new_table is the name assigned of migration
+9:28min
